@@ -1,4 +1,3 @@
-from flask import Flask, render_template
 import datetime
 
 
@@ -6,10 +5,10 @@ class Schedule:
     def __init__(self):
         pass
 
-    schedule = {}
     @staticmethod
     def getSchedule():
         today = datetime.datetime.today().weekday()
+        schedule = {}
         if today == (0 or 6):
             schedule = {}
         elif today == (1 or 3):
