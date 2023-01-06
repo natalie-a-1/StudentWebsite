@@ -13,15 +13,15 @@
     {% block body %}
 {{schedule}}
 <ul>
-  {% for item in items %}
+  {% for task in tasks %}
   <li>
-    <input type="checkbox" name="completed" value="{{ item.id }}" {% if item.completed %}checked{% endif %}>
-    {{ item.title }}
+    <input type="checkbox" name="completed" value="{{ task.id }}" {% if task.completed %}checked{% endif %}>
+    {{ task.title }}
   </li>
   {% endfor %}
 </ul>
 
-<form action="{{ url_for('add_item') }}" method="post">
+<form action="{{ url_for('add_todo_tasks_blueprint.add_tasks') }}" method="post">
   <input type="text" name="title">
   <button type="submit">Add</button>
 </form>

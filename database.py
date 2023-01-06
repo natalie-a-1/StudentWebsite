@@ -1,22 +1,30 @@
 import sqlite3
 
 
-def get_todo_items():
-    conn = sqlite3.connect('todo.db')
+def get_todo_tasks():
+    conn = sqlite3.connect('todo.db', check_same_thread=False)
     cursor = conn.cursor()
     cursor.execute('''
-        SELECT id, title, completed FROM items
+        CREATE TABLE IF NOT EXISTS tasks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            completed BOOLEAN NOT NULL
+        )
     ''')
-    items = cursor.fetchall()
+    cursor.execute('''
+        SELECT id, title, completed FROM tasks
+    ''')
+    tasks = cursor.fetchall()
+    conn.commit()
     conn.close()
-    return items
+    return tasks
 
 
-def add_todo_item(title, completed):
-    conn = sqlite3.connect('todo.db')
+def add_todo_tasks(title, completed):
+    conn = sqlite3.connect('todo.db', check_same_thread=False)
     cursor = conn.cursor()
     cursor.execute('''
-        INSERT INTO items (title, completed) VALUES (?, ?)
+        INSERT INTO tasks (title, completed) VALUES (?, ?)
     ''', (title, completed))
     conn.commit()
     conn.close()
