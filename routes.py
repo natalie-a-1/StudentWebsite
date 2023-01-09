@@ -5,9 +5,7 @@ from database import get_todo_tasks, add_todo_tasks
 home_blueprint = Blueprint('home_blueprint', __name__)
 
 
-# , template_folder='templates'
-
-@home_blueprint.route('/')
+@home_blueprint.route('/', methods=['GET', 'POST'])
 def home_page():
     schedule = sc.Schedule().getSchedule()
     tasks = get_todo_tasks()
@@ -17,9 +15,9 @@ def home_page():
 add_todo_tasks_blueprint = Blueprint('add_todo_tasks_blueprint', __name__)
 
 
-@add_todo_tasks_blueprint.route('/add', methods=['POST'])
+@add_todo_tasks_blueprint.route('/add', methods=['GET', 'POST'])
 def add_tasks():
     title = request.form['title']
-    completed = request.form['completed']
-    add_todo_tasks(title, completed)
-    return redirect(url_for('home'))
+    # completed = request.form['completed']
+    add_todo_tasks(title)
+    return redirect(url_for('home_blueprint.home_page'))
