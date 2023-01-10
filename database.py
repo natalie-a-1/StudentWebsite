@@ -29,9 +29,11 @@ def add_todo_tasks(title):
     conn.close()
 
 
-def delete_todo_tasks(title):
+def delete_todo_tasks(id):
     conn = sqlite3.connect('todo.db', check_same_thread=False)
     cursor = conn.cursor()
-    # cursor.execute('''
-    #     DELETE FROM tasks WHERE title=
-    # ''')
+    cursor.execute('''
+        DELETE FROM tasks WHERE id=?
+    ''', [id])
+    conn.commit()
+    conn.close()

@@ -2,10 +2,11 @@ body {
     background-color: pink;
 }
 
-.checkbox {
+.checkboxes {
     width: 1.3em;
     height: 1.3em;
     background-color: white;
+    color: white;
     border-radius: 50%;
     vertical-align: middle;
     border: 1px solid #ddd;
@@ -15,6 +16,6 @@ body {
     cursor: pointer;
 }
 
-.checkbox:checked {
+.checkboxes:checked {
     background-color: gray;
 }

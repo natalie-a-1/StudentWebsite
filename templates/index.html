@@ -12,20 +12,26 @@
 <body>
     {% block body %}
 {{schedule}}
-    <div class="todo_list">
+
+    <form action="{{ url_for('delete_todo_tasks_blueprint.delete_tasks') }}" method="post">
         <ul style="list-style-type:none;">
         {% for task in tasks %}
         <li>
-            <p style="color:black;" style="font:20px;"><input type="checkbox" name="completed" class="checkbox">{{ task[1] }}</p>
+            <p style="color:black;" style="font:20px;">
+                <input type="submit" name="check" id="checkbox" class="checkboxes" value="{{ task[0] }}">
+                <label for="checkbox">{{ task[1] }}</label>
+            </p>
         </li>
         {% endfor %}
         </ul>
+    </form>
 
-        <form action="{{ url_for('add_todo_tasks_blueprint.add_tasks') }}" method="post">
+    <form action="{{ url_for('add_todo_tasks_blueprint.add_tasks') }}" method="post">
         <input type="text" name="title">
         <button type="submit">Add</button>
-        </form>
-        </div>
+    </form>
+
+
     {% endblock %}
 </body>
 </html>
