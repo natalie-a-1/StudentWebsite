@@ -11,25 +11,43 @@
 </head>
 <body>
     {% block body %}
-{{schedule}}
 
-    <form action="{{ url_for('delete_todo_tasks_blueprint.delete_tasks') }}" method="post">
-        <ul style="list-style-type:none;">
-        {% for task in tasks %}
-        <li>
-            <p style="color:black;" style="font:20px;">
-                <input type="submit" name="check" id="checkbox" class="checkboxes" value="{{ task[0] }}">
-                <label for="checkbox">{{ task[1] }}</label>
-            </p>
-        </li>
-        {% endfor %}
-        </ul>
-    </form>
+    <div id="schedule_table">
+        <table>
+            <col>8:00 am</col>
+            <col>9:00 am</col>
+            <tr>10:00 am</tr>
+            <tr>11:00 am</tr>
+            <tr>12:00 pm</tr>
+            <tr>1:00 pm</tr>
+            <tr>2:00 pm</tr>
+            <tr>3:00 pm</tr>
+            <tr>4:00 pm</tr>
+            <tr>5:00 pm</tr>
+            <tr>6:00 pm</tr>
+        </table>
+    </div>
 
-    <form action="{{ url_for('add_todo_tasks_blueprint.add_tasks') }}" method="post">
-        <input type="text" name="title">
-        <button type="submit">Add</button>
-    </form>
+    <div id="todo_list">
+        <form action="{{ url_for('delete_todo_tasks_blueprint.delete_tasks') }}" method="post">
+            <ul style="list-style-type:none;">
+            {% for task in tasks %}
+            <li>
+                <p style="color:black;" style="font:20px;">
+                    <input type="submit" name="check" id="checkbox" class="checkboxes" value="{{ task[0] }}">
+                    <label for="checkbox">{{ task[1] }}</label>
+                </p>
+            </li>
+            {% endfor %}
+            </ul>
+        </form>
+
+        <form action="{{ url_for('add_todo_tasks_blueprint.add_tasks') }}" method="post">
+            <input type="text" name="title">
+            <button type="submit">Add</button>
+        </form>
+
+    </div>
 
 
     {% endblock %}

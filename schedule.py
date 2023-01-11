@@ -13,22 +13,22 @@ class Schedule:
             schedule = {}
         elif today == (1 or 3):
             schedule = {
-                '8:00am-11:00am': 'work',
-                '11:30am-12:20pm': 'principles of programming',
-                '1:30pm-2:20pm': 'linear algebra',
-                '3:30pm-5:15pm': 'professional development',
+                '8:00 am - 11:00 am': 'work',
+                '11:30 am - 12:20 pm': 'principles of programming',
+                '1:30 pm - 2:20 pm': 'linear algebra',
+                '3:30 pm - 5:15 pm': 'professional development',
             }
         elif today == (2 or 4):
             schedule = {
-                '9:00am-10:15am': 'intro to operating systems',
-                '11:30am-12:20pm': 'work',
-                '4:30pm-5:15pm': 'software engineering',
+                '9:00 am - 10:15 am': 'intro to operating systems',
+                '11:30 am - 12:20 pm': 'work',
+                '4:30 pm - 5:15 pm': 'software engineering',
 
             }
         elif today == 5:
             schedule = {
-                '8:00am-11:00am': 'work',
-                '11:30am-12:20pm': 'principles of programming',
-                '1:30pm-2:20pm': 'linear algebra',
+                '8:00 am - 11:00 am': 'work',
+                '11:30 am - 12:20 pm': 'principles of programming',
+                '1:30 pm - 2:20 pm': 'linear algebra',
             }
         return schedule
