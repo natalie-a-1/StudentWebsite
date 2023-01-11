@@ -13,19 +13,9 @@
     {% block body %}
 
     <div id="schedule_table">
-        <table>
-            <col>8:00 am</col>
-            <col>9:00 am</col>
-            <tr>10:00 am</tr>
-            <tr>11:00 am</tr>
-            <tr>12:00 pm</tr>
-            <tr>1:00 pm</tr>
-            <tr>2:00 pm</tr>
-            <tr>3:00 pm</tr>
-            <tr>4:00 pm</tr>
-            <tr>5:00 pm</tr>
-            <tr>6:00 pm</tr>
-        </table>
+<!--        {% if schedule == 1 or 3 %}-->
+        {% include 'odd.html' %}
+<!--        {% endif %}-->
     </div>
 
     <div id="todo_list">
