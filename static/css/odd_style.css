@@ -1,20 +1,78 @@
-table {
-    border-collapse: collapse;
-    width: 50%;
+ul {
+    list-style: none;
 }
 
-tr {
-    border-bottom: 1px solid #ff000d;
+li {
+    padding-bottom: 20px;
 }
 
-td {
-    padding: 10px;
+.schedule {
+    float: right;
+    right: 15%;
+    position: absolute;
+
+}
+
+.schedule-text {
+    position:absolute;
+    left:110px;
+    top: 60px;
 }
 
 .text {
-    background: rgba(51, 170, 51, .3);
+    background: rgba(67, 97, 238, .3);
+    width: 90px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
 }
 
 .text:hover {
-    background: rgba(51, 170, 51, .4)
+    background: rgba(67, 97, 238, .4)
+}
+
+#work, #pop, #la, #pd {
+    margin-bottom: 10px;
+}
+
+#work {
+    height: 105px;
+    align-items: center;
+}
+
+#work-text {
+    position: relative;
+    top: 30%;
+}
+
+#pop-text {
+    position: relative;
+    bottom: 55%;
+}
+
+#la-text {
+    position: relative;
+    bottom: 30%;
+}
+
+#pd-text {
+    position: relative;
+    bottom: 5%;
+}
+
+#pop {
+    height: 25px;
+    margin-top: 15px;
+}
+
+#la {
+    height: 25px;
+
+    margin-top: 25px;
+}
+
+#pd {
+    height: 52px;
+    margin-top: 30px;
 }

@@ -1,9 +1,16 @@
 body {
-    background-color: pink;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#todo-list {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
 }
 
 .checkboxes {
     width: 1.3em;
+    font-size: 12px;
     height: 1.3em;
     background-color: white;
     color: white;
