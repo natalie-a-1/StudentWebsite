@@ -20,7 +20,7 @@
 
     <div id="todo_list">
         <form action="{{ url_for('delete_todo_tasks_blueprint.delete_tasks') }}" method="post">
-            <ul style="list-style-type:none;">
+            <ul style="list-style:none;">
             {% for task in tasks %}
             <li>
                 <p style="color:black;">
@@ -34,7 +34,7 @@
 
         <form action="{{ url_for('add_todo_tasks_blueprint.add_tasks') }}" method="post">
             <input type="text" name="title">
-            <button type="submit">Add</button>
+            <button type="submit" class="add-button"><p class="add-sign">+</p></button>
         </form>
 
     </div>

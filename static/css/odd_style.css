@@ -29,7 +29,7 @@ li {
 }
 
 .text:hover {
-    background: rgba(67, 97, 238, .4)
+    background: rgba(67, 97, 238, .4);
 }
 
 #work, #pop, #la, #pd {
@@ -39,6 +39,75 @@ li {
 #work {
     height: 105px;
     align-items: center;
+}
+
+#work-hover {
+    display: none;
+    background: rgba(67, 97, 238, .2);
+    float: right;
+    position: absolute;
+    left: 115px;
+    top: 20px;
+    width: 70px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#work-hover-text, #pop-hover-text, #la-hover-text, #pd-hover-text {
+    font-size: 12px;
+    text-align: center;
+}
+
+#work:hover + #work-hover{
+    display: block;
+}
+
+#pop-hover {
+    display: none;
+    background: rgba(67, 97, 238, .2);
+    float: right;
+    position: absolute;
+    left: 115px;
+    top: 115px;
+    width: 70px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#pop:hover + #pop-hover {
+    display: block;
+}
+
+#la-hover {
+    display: none;
+    background: rgba(67, 97, 238, .2);
+    float: right;
+    position: absolute;
+    left: 115px;
+    top: 195px;
+    width: 70px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#la:hover + #la-hover {
+    display: block;
+}
+
+#pd-hover {
+    display: none;
+    background: rgba(67, 97, 238, .2);
+    float: right;
+    position: absolute;
+    left: 115px;
+    top: 280px;
+    width: 70px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#pd:hover + #pd-hover {
+    display: block;
 }
 
 #work-text {
